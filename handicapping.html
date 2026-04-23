@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handicapping — netGolfLeague Help</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="14" fill="rgba(255,255,255,0.15)"/>
+        <path d="M14 6a8 8 0 1 1 0 16A8 8 0 0 1 14 6z" fill="none" stroke="white" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="3" fill="white"/>
+        <path d="M14 17v5M11 22h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>netGolfLeague <span class="logo-sub">Help Center</span></span>
+    </a>
+    <nav class="header-nav">
+      <a href="getting-started.html">Getting Started</a>
+      <a href="league-homepage.html">Homepage</a>
+      <a href="league-tools.html">Tools</a>
+      <a href="handicapping.html" class="active">Handicapping</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Help Center</a>
+  <span class="sep">›</span>
+  <span>Handicapping</span>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="article-layout">
+
+      <aside class="sidebar">
+        <h3>In this section</h3>
+        <ul>
+          <li><a href="#handicap-overview">Overview</a></li>
+          <li><a href="#handicap-index">Handicap Index</a></li>
+          <li><a href="#course-handicap">Course Handicap</a></li>
+          <li><a href="#seed-handicaps">Setting Initial Handicaps</a></li>
+          <li><a href="#handicap-methods">Calculation Methods</a></li>
+          <li><a href="#max-handicap">Maximum Handicap</a></li>
+          <li><a href="#course-rating">Course Rating</a></li>
+        </ul>
+      </aside>
+
+      <div>
+        <div class="article-body" style="margin-bottom:24px; padding:28px 40px;">
+          <span class="article-tag">Handicapping</span>
+          <h1>Handicapping in netGolfLeague</h1>
+          <p class="article-lead">NGL's handicap system levels the playing field so golfers of all abilities can compete fairly. Here's everything you need to know.</p>
+        </div>
+
+        <div id="handicap-overview" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Overview</span>
+            <h2 style="border:none; margin-top:8px;">How NGL Handicapping Works</h2>
+          </div>
+          <p>netGolfLeague uses a handicap system based on the USGA methodology. Handicaps are calculated automatically from the scores your golfers post each week — no manual math required.</p>
+          <p>NGL uses <strong>handicaps 1–9</strong> (not 1–18) to accommodate leagues that play nine holes and courses with varying configurations, including 36-hole facilities.</p>
+          <h3>Three Supported Handicap Methods</h3>
+          <ul>
+            <li><strong>Standard</strong> — no stroke limit applied</li>
+            <li><strong>Standard with ESC</strong> (Equitable Stroke Control) — adjusts unusually high hole scores before calculating the differential</li>
+            <li><strong>Standard with Stroke Average</strong> — uses a stroke average approach rather than differentials</li>
+          </ul>
+          <p>Choose your method in <strong>Setup → League and Season Options → Handicap Method</strong>.</p>
+        </div>
+
+        <div id="handicap-index" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Concepts</span>
+            <h2 style="border:none; margin-top:8px;">What is a Handicap Index?</h2>
+          </div>
+          <p>A <strong>Handicap Index</strong> is a decimal number that represents a golfer's demonstrated ability relative to par — independent of the specific course they're playing. It's a portable measure of skill that works on any rated course.</p>
+          <p>Example: a golfer with a Handicap Index of <strong>12.4</strong> typically shoots about 12–13 strokes over par on a course of average difficulty.</p>
+          <h3>How it's calculated</h3>
+          <p>NGL uses the <strong>most recent 20 scores and seeds</strong> to calculate the Handicap Index. The system takes the best differentials from those rounds, averages them, and applies a multiplier to produce the final index.</p>
+          <div class="tip-box"><strong>Handicap Index vs. Course Handicap:</strong> The Handicap Index is your portable ability number. The Course Handicap is what you actually use on the scorecard — it's adjusted for the specific course's slope rating.</div>
+        </div>
+
+        <div id="course-handicap" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Concepts</span>
+            <h2 style="border:none; margin-top:8px;">What is a Course Handicap?</h2>
+          </div>
+          <p>A <strong>Course Handicap</strong> is a whole number that tells you how many strokes you need to match a scratch golfer's performance on a <em>specific course</em> from a <em>specific set of tees</em>.</p>
+          <h3>The Formula</h3>
+          <p style="background:var(--green-pale); padding:12px 16px; border-radius:8px; font-family:monospace; font-size:.9rem;">
+            Course Handicap = Handicap Index × (Slope Rating ÷ 113)
+          </p>
+          <p>Where <strong>113</strong> is the standard slope rating for a course of average difficulty. A course with a higher slope is harder than average; a lower slope is easier.</p>
+          <p>Example: Handicap Index of 12.4 on a course with Slope Rating 125 = <strong>14</strong> Course Handicap.</p>
+        </div>
+
+        <div id="seed-handicaps" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Setup</span>
+            <h2 style="border:none; margin-top:8px;">Setting Initial (Seed) Handicaps</h2>
+          </div>
+          <p>At the start of a new season, golfers don't yet have scores in the system. Seed handicaps give NGL a starting point for calculations.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Open Each Golfer's Profile</h4>
+                <p>Navigate to Golfer Management and select a golfer to edit their profile.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Add Seed Scores</h4>
+                <p>Enter historical scores along with the course slope and rating for each score. NGL incorporates these into the handicap calculation.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Save and Repeat</h4>
+                <p>Repeat for all golfers. Seed scores appear alongside real scores in the 20-round calculation window.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tip-box">
+            <strong>Quick tip for Week 1:</strong> If you don't have historical scores, a simple starting handicap is each golfer's <em>first week score minus par</em>. Enter this as their seed so no one defaults to scratch (0 handicap).
+          </div>
+        </div>
+
+        <div id="handicap-methods" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Methods</span>
+            <h2 style="border:none; margin-top:8px;">Handicap Calculation Methods</h2>
+          </div>
+
+          <h3>Standard (No Stroke Limit)</h3>
+          <p>Scores are used as-is to calculate the differential. No maximum is applied to any individual hole score. Best for informal leagues.</p>
+
+          <h3>Standard with ESC (Equitable Stroke Control)</h3>
+          <p>ESC caps the maximum score a golfer can record on any single hole before the differential is calculated. This prevents one bad hole from wildly skewing a handicap.</p>
+          <ul>
+            <li>Course Handicap 0–9 → max score per hole: <strong>double bogey</strong></li>
+            <li>Course Handicap 10–19 → max score per hole: <strong>7</strong></li>
+            <li>Course Handicap 20–29 → max score per hole: <strong>8</strong></li>
+            <li>Course Handicap 30–39 → max score per hole: <strong>9</strong></li>
+            <li>Course Handicap 40+ → max score per hole: <strong>10</strong></li>
+          </ul>
+
+          <h3>Standard with Stroke Average</h3>
+          <p>Uses the average of the golfer's actual strokes per round rather than score differentials. Good for leagues that want a simpler, more intuitive handicap number.</p>
+        </div>
+
+        <div id="max-handicap" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Reference</span>
+            <h2 style="border:none; margin-top:8px;">Maximum Nine-Hole Handicap</h2>
+          </div>
+          <p>The USGA sets maximum Handicap Index limits:</p>
+          <ul>
+            <li><strong>Men:</strong> 18.2</li>
+            <li><strong>Women:</strong> 20.2</li>
+          </ul>
+          <p>Note that the resulting <strong>Course Handicap</strong> may be higher than these values on courses with slope ratings above 113, since the slope multiplier increases the number.</p>
+        </div>
+
+        <div id="course-rating" class="article-body">
+          <div class="article-header">
+            <span class="article-tag">Reference</span>
+            <h2 style="border:none; margin-top:8px;">How Course Ratings Are Established</h2>
+          </div>
+          <p>Course ratings are conducted by the NCGA (or your regional golf association) every six years using trained volunteer raters. Raters evaluate <strong>10 obstacles per hole</strong> to arrive at the official Course Rating and Slope Rating.</p>
+          <p>You can look up official course ratings at the USGA course rating database: <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">ncrdb.usga.org</a></p>
+          <div class="tip-box"><strong>Course not in NGL's database?</strong> When setting up your schedule, use the option to submit a new course. You'll need the official course rating and slope from the scorecard or the USGA database.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">⛳ netGolfLeague</div>
+        <p>Cloud-based golf league management — schedules, scoring, handicaps, and stats all in one place.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Help Topics</h4>
+        <ul>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="league-homepage.html">League Homepage</a></li>
+          <li><a href="league-tools.html">League Tools</a></li>
+          <li><a href="handicapping.html">Handicapping</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>netGolfLeague</h4>
+        <ul>
+          <li><a href="https://www.netgolfleague.com" target="_blank">Main Website</a></li>
+          <li><a href="mailto:support@netgolfleague.com">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 netGolfLeague. All rights reserved.</span>
+      <a href="https://www.netgolfleague.com" target="_blank">www.netgolfleague.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const links = document.querySelectorAll('.sidebar a');
+  const sections = document.querySelectorAll('[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — netGolfLeague Help</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="14" fill="rgba(255,255,255,0.15)"/>
+        <path d="M14 6a8 8 0 1 1 0 16A8 8 0 0 1 14 6z" fill="none" stroke="white" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="3" fill="white"/>
+        <path d="M14 17v5M11 22h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>netGolfLeague <span class="logo-sub">Help Center</span></span>
+    </a>
+    <nav class="header-nav">
+      <a href="getting-started.html">Getting Started</a>
+      <a href="league-homepage.html">Homepage</a>
+      <a href="league-tools.html">Tools</a>
+      <a href="handicapping.html">Handicapping</a>
+      <a href="faq.html" class="active">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Help Center</a>
+  <span class="sep">›</span>
+  <span>FAQ</span>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="article-layout">
+
+      <aside class="sidebar">
+        <h3>Jump to section</h3>
+        <ul>
+          <li><a href="#handicaps">Handicaps</a></li>
+          <li><a href="#scoring">Scoring</a></li>
+          <li><a href="#golfer-management">Golfer Management</a></li>
+          <li><a href="#second-year">New Season Setup</a></li>
+          <li><a href="#other">Other</a></li>
+        </ul>
+      </aside>
+
+      <div>
+        <div class="article-body" style="margin-bottom:24px; padding:28px 40px;">
+          <span class="article-tag">FAQ</span>
+          <h1>Frequently Asked Questions</h1>
+          <p class="article-lead">Quick answers to the most common questions from netGolfLeague administrators and members.</p>
+        </div>
+
+        <!-- HANDICAPS -->
+        <div id="handicaps" class="article-body" style="margin-bottom:20px;">
+          <div class="faq-category-title">Handicaps</div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              Why does NGL use handicaps 1–9 instead of 1–18?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              NGL uses a 1–9 scale to accommodate the wide variety of courses leagues play on. Some courses have 36 holes, some have just 9, so a standardized 1–9 handicap works consistently across all configurations.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              I don't want to seed handicaps for my golf league. What happens?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              First-week scorecard entries must include a handicap value; otherwise golfers default to a 0 handicap (scratch). A simple approach: take each golfer's Week 1 score minus par and use that as their seed handicap. This prevents everyone from starting at scratch.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              I have no Handicap Indexes but I have scores and seeded values — how do calculations work?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Two options exist: use all season scores across all years (the default), or restrict calculations to the current season only. Configure this in Setup → League and Season Options → Handicap Calculation.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How is a course rating established?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              The NCGA (and similar regional associations) rate courses every six years using trained volunteer raters who evaluate 10 obstacles per hole. Official ratings are available in the <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">USGA course database</a>.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              What is the maximum nine-hole handicap?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              USGA maximums are 18.2 for men and 20.2 for women. However, the resulting Course Handicap can be higher on courses with slope ratings exceeding 113, since the slope multiplier increases the number.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              Why are my handicaps so low after Week 1?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              This almost always means handicaps weren't entered before Week 1 scores were posted, so golfers defaulted to scratch (0). Always enter seed handicaps before posting the first round. The recommended seed: each golfer's score minus par.
+            </div>
+          </div>
+        </div>
+
+        <!-- SCORING -->
+        <div id="scoring" class="article-body" style="margin-bottom:20px;">
+          <div class="faq-category-title">Scoring</div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              What is Stableford Scoring?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Stableford is a points-based scoring format where you earn points on each hole based on your score relative to par (adjusted for handicap). Bogey = 1 point, Par = 2, Birdie = 3, Eagle = 4, etc. The golfer with the most total points wins — rather than the fewest strokes. It rewards aggressive play and is forgiving of one bad hole.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I set up Stroke Play?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Select "Match Play – Wins/Losses" or "Match Play – Total Points" from the Team Scoring System dropdown in Setup. Then customize the scoring parameters via Team Scoring Configuration to match your league's format.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              Why must I select pairings to show a player's name?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Pairings designate which golfers are active for each match week and enable team substitutions across multiple players. Without pairings, the system doesn't know who's playing that week, so names can't populate the scorecard entry screen.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I set up Fourball Match Play?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Choose "Best Ball – Points" or "Best Ball – Wins/Losses" as your team scoring system. Then configure the scoring parameters (points per hole, match points, etc.) in Team Scoring Configuration. In Best Ball / Fourball, each team uses the lowest score from its members on each hole.
+            </div>
+          </div>
+        </div>
+
+        <!-- GOLFER MANAGEMENT -->
+        <div id="golfer-management" class="article-body" style="margin-bottom:20px;">
+          <div class="faq-category-title">Golfer Management</div>
+
+          <div class="faq-item" id="golfer-login">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I send golfers their login ID and password?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              In Golfer Management, select the golfer names you want to contact, choose <strong>Invite</strong> from the Email dropdown, then click the <strong>Email</strong> button. This sends a batch email to each selected golfer with their personal login credentials.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I add a golfer who already belongs to another NGL league?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Use <strong>Quick Add Golfer</strong> and enter their email address. If that address already exists in the NGL system, their account is automatically linked to your league — no duplicate profile is created and their login stays the same.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I add a golfer who doesn't have an email address?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Click <strong>Edit</strong> on the Golfers section, then click the <strong>Add</strong> button. Fill in the required fields (marked with asterisks). Email is not mandatory — you can create a golfer record without one.
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW SEASON SETUP -->
+        <div id="second-year" class="article-body" style="margin-bottom:20px;">
+          <div class="faq-category-title">New Season Setup</div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I set up for my 2nd, 3rd... year?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Create a new season with a start date earlier than today (so it becomes active), then use the <strong>Copy</strong> function on the Golfer Management screen to bring all previous golfers into the new season automatically.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              Can a golf league join halfway through its season?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Yes. Past scores can be backdated using the <strong>Post League Info</strong> feature. Create events with past dates and enter the historical scores — NGL will calculate standings and handicaps as if those scores had been entered on time.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              Can I track my individual stats using NGL?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Yes! Create a single-person league and season just for yourself. Enter your scores each round and NGL will track your personal statistics, handicap progression, and scoring history over time.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I set up my league so members can play both front and back nines?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Create two same-day events per week — for example "Week 1 Front 9" and "Week 1 Back 9" — each with their own team and pairing schedules. This lets you record and track front and back nine scores as separate rounds.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              I'm a premium subscriber. How do I get started quickly?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Follow these six steps: (1) Verify your league setup is complete, (2) Add golfers and teams, (3) Configure your scoring system, (4) Schedule your rounds, (5) Play golf, (6) Enter scores after each round. See the <a href="getting-started.html">Getting Started</a> guide for detailed instructions on each step.
+            </div>
+          </div>
+        </div>
+
+        <!-- OTHER -->
+        <div id="other" class="article-body" style="margin-bottom:20px;">
+          <div class="faq-category-title">Other</div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              I can't log in or I keep getting logged out. What do I do?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              NGL uses cookies to maintain your session. Make sure your browser is set to accept cookies from netgolfleague.com. If the problem persists after enabling cookies, contact <a href="mailto:support@netgolfleague.com">support@netgolfleague.com</a>.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How can I upload files other than text or HTML?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Convert your file to .txt or .html format before uploading using your application's "Save As" function. Alternatively, host the file on Google Drive or Dropbox and share the link as a text item in the League Information Center.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do split season stats and standings work?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Create separate seasons with distinct date ranges for each split. Set the handicap calculation to "Use scores for all seasons for this league" (the default) so handicaps carry across splits. Each season's standings reset independently at the start of that season.
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact-banner">
+          <div>
+            <h3>Still have a question?</h3>
+            <p>Our support team is happy to help with anything not covered here.</p>
+          </div>
+          <a href="mailto:support@netgolfleague.com" class="btn-outline-white">Email Support</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">⛳ netGolfLeague</div>
+        <p>Cloud-based golf league management — schedules, scoring, handicaps, and stats all in one place.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Help Topics</h4>
+        <ul>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="league-homepage.html">League Homepage</a></li>
+          <li><a href="league-tools.html">League Tools</a></li>
+          <li><a href="handicapping.html">Handicapping</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>netGolfLeague</h4>
+        <ul>
+          <li><a href="https://www.netgolfleague.com" target="_blank">Main Website</a></li>
+          <li><a href="mailto:support@netgolfleague.com">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 netGolfLeague. All rights reserved.</span>
+      <a href="https://www.netgolfleague.com" target="_blank">www.netgolfleague.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggle(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question.open').forEach(b => b.classList.remove('open'));
+    if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+  }
+
+  const links = document.querySelectorAll('.sidebar a');
+  const sections = document.querySelectorAll('[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+  });
+
+  // Auto-open FAQ item if hash matches
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash + ' .faq-question');
+    if (target) { toggle(target); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+</script>
+</body>
+</html>
