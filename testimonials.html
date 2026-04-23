@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — netGolfLeague Help</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--green-light);
+    }
+    .testimonial-quote {
+      font-size: .95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+      position: relative;
+      padding-left: 20px;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      position: absolute;
+      left: 0;
+      top: -4px;
+      font-size: 2rem;
+      color: var(--green-light);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-author {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    .testimonial-author span {
+      display: block;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .star-row { color: #d4a017; font-size: .9rem; margin-bottom: -4px; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="14" fill="rgba(255,255,255,0.15)"/>
+        <path d="M14 6a8 8 0 1 1 0 16A8 8 0 0 1 14 6z" fill="none" stroke="white" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="3" fill="white"/>
+        <path d="M14 17v5M11 22h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>netGolfLeague <span class="logo-sub">Help Center</span></span>
+    </a>
+    <nav class="header-nav">
+      <a href="getting-started.html">Getting Started</a>
+      <a href="league-homepage.html">Homepage</a>
+      <a href="league-tools.html">Tools</a>
+      <a href="handicapping.html">Handicapping</a>
+      <a href="faq.html">FAQ</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Help Center</a>
+  <span class="sep">›</span>
+  <span>Testimonials</span>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding:48px 24px 40px;">
+  <h1>What League Administrators Are Saying</h1>
+  <p>Hundreds of golf leagues use netGolfLeague every season. Here's what some of them have to say.</p>
+</section>
+
+<div class="container">
+  <section class="section">
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          I can honestly say netGolfLeague.com has all the boxes ticked. The support I've received from Mike and netGolfLeague.com has been exceptional, always delivering an answer promptly and courteously. True value combines cost, quality, and after-sales support — and this site delivers all three.
+        </p>
+        <div class="testimonial-author">
+          Kim
+          <span>Diamonds Golf League, Ray Twp, MI</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Being the first year using the site as an administrator it's great. Everyone loves it, I love it… we'll definitely be using it in the years to come!
+        </p>
+        <div class="testimonial-author">
+          Gio
+          <span>Golf League, Ohio</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          The new website functionality and look is a success. I'm basing this on the number of visits my league members are making to the site — compared to last year it's a big change.
+        </p>
+        <div class="testimonial-author">
+          Pedro
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Hi — I love your program! Thanks for the great software.
+        </p>
+        <div class="testimonial-author">
+          Dave
+          <span>League Member</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          This is the first year using a site like this for our golf league and everyone is loving it. Thanks to the support team!
+        </p>
+        <div class="testimonial-author">
+          Andrew
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          We researched multiple platforms and found this one to stand above the rest. It has everything we need to run our league efficiently.
+        </p>
+        <div class="testimonial-author">
+          League Administrators
+          <span>Multi-league comparison</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Mike, I love the site. I made the right decision when I decided to go with NetGolfLeague — it made my first year a success.
+        </p>
+        <div class="testimonial-author">
+          Pedro
+          <span>First-year League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Thanks guys, this site is awesome — it's really helped spark interest in our league.
+        </p>
+        <div class="testimonial-author">
+          Calgary Golf League
+          <span>Calgary, Canada</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          I manage three nine-hole courses and this program has saved me hours!! The reporting alone is worth it.
+        </p>
+        <div class="testimonial-author">
+          Course Administrator
+          <span>Golf League, Ohio</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Thanks for all your help — I really love the website and would recommend it to anyone. The support team was incredibly patient walking me through everything.
+        </p>
+        <div class="testimonial-author">
+          Darlene
+          <span>Golf League, Ontario, Canada</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          We run a league with nearly 300 golfers and netGolfLeague has streamlined our entire administrative process. Mike Ferry's collaborative approach to customization has made this a true partnership. The reporting features are outstanding.
+        </p>
+        <div class="testimonial-author">
+          Mike Bresler
+          <span>Wachovia Golf League President</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Your website rules in comparison to your competition.
+        </p>
+        <div class="testimonial-author">
+          Todd
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          The software worked out great. We're renewing for another season without hesitation.
+        </p>
+        <div class="testimonial-author">
+          Greg R.
+          <span>Secretary, Saint Ambrose Men's Golf League</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Our members think the site is awesome. Thanks for a great system — everyone is talking about it at the clubhouse.
+        </p>
+        <div class="testimonial-author">
+          Kev
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Looks like a great website, and the support is phenomenal.
+        </p>
+        <div class="testimonial-author">
+          Bill Z.
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          We've been using NGL for three years for our traveling league across different courses. Score entry takes about 10 minutes and my league members love seeing results instantly. The mass email capability is a huge timesaver too.
+        </p>
+        <div class="testimonial-author">
+          Tim Lange
+          <span>TGA Traveling Golf League, Cleveland, OH</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          Once we had the schedule set up it was a breeze to use! The handicap calculations happen automatically and we can produce weekly scoring reports for our skins game competitions. Looking forward to exploring even more features this season.
+        </p>
+        <div class="testimonial-author">
+          Linda A. Siple, Ph.D.
+          <span>RIT Golf League, Rochester, NY</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          I made the right decision with NetGolfLeague. It made my first year as a league administrator a success — couldn't have done it without this platform and the great support team.
+        </p>
+        <div class="testimonial-author">
+          Pedro
+          <span>League Manager</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <p class="testimonial-quote">
+          A great website for anyone running a golf league. The setup is straightforward and the ongoing support has been excellent whenever we've had questions.
+        </p>
+        <div class="testimonial-author">
+          Wisconsin Golf League
+          <span>League Administrator</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="contact-banner" style="margin-top:48px;">
+      <div>
+        <h3>Ready to try netGolfLeague?</h3>
+        <p>Join hundreds of leagues who trust NGL to run their season from start to finish.</p>
+      </div>
+      <a href="https://www.netgolfleague.com" target="_blank" class="btn-outline-white">Start Free Trial</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">⛳ netGolfLeague</div>
+        <p>Cloud-based golf league management — schedules, scoring, handicaps, and stats all in one place.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Help Topics</h4>
+        <ul>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="league-homepage.html">League Homepage</a></li>
+          <li><a href="league-tools.html">League Tools</a></li>
+          <li><a href="handicapping.html">Handicapping</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>netGolfLeague</h4>
+        <ul>
+          <li><a href="https://www.netgolfleague.com" target="_blank">Main Website</a></li>
+          <li><a href="mailto:support@netgolfleague.com">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 netGolfLeague. All rights reserved.</span>
+      <a href="https://www.netgolfleague.com" target="_blank">www.netgolfleague.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
