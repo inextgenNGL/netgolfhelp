@@ -42,143 +42,394 @@
       <aside class="sidebar">
         <h3>In this section</h3>
         <ul>
-          <li><a href="#handicap-overview">Overview</a></li>
+          <li><a href="#handicap-overview">Overview &amp; Methods</a></li>
+          <li><a href="#score-types">Score Types</a></li>
+          <li><a href="#esc-table">ESC Table</a></li>
+          <li><a href="#differentials">Handicap Differentials</a></li>
+          <li><a href="#differential-tables">Differential Tables</a></li>
           <li><a href="#handicap-index">Handicap Index</a></li>
           <li><a href="#course-handicap">Course Handicap</a></li>
+          <li><a href="#ngl-2020">NGL 2020 Course Handicap</a></li>
+          <li><a href="#handicap-distribution">Distributing Handicap</a></li>
           <li><a href="#seed-handicaps">Setting Initial Handicaps</a></li>
-          <li><a href="#handicap-methods">Calculation Methods</a></li>
           <li><a href="#max-handicap">Maximum Handicap</a></li>
           <li><a href="#course-rating">Course Rating</a></li>
         </ul>
       </aside>
 
       <div>
+
+        <!-- PAGE HEADER -->
         <div class="article-body" style="margin-bottom:24px; padding:28px 40px;">
           <span class="article-tag">Handicapping</span>
           <h1>Handicapping in netGolfLeague</h1>
-          <p class="article-lead">NGL's handicap system levels the playing field so golfers of all abilities can compete fairly. Here's everything you need to know.</p>
+          <p class="article-lead">NGL's handicap system levels the playing field so golfers of all abilities can compete fairly. Here's the complete reference — methods, formulas, tables, and examples.</p>
         </div>
 
+        <!-- OVERVIEW -->
         <div id="handicap-overview" class="article-body" style="margin-bottom:20px;">
           <div class="article-header">
             <span class="article-tag">Overview</span>
-            <h2 style="border:none; margin-top:8px;">How NGL Handicapping Works</h2>
+            <h2 style="border:none; margin-top:8px;">Handicap Methods</h2>
           </div>
-          <p>netGolfLeague uses a handicap system based on the USGA methodology. Handicaps are calculated automatically from the scores your golfers post each week — no manual math required.</p>
-          <p>NGL uses <strong>handicaps 1–9</strong> (not 1–18) to accommodate leagues that play nine holes and courses with varying configurations, including 36-hole facilities.</p>
-          <h3>Three Supported Handicap Methods</h3>
+          <p>netGolfLeague supports five handicap calculation methods. Choose yours in <strong>Setup → League and Season Options → Handicap Method</strong>.</p>
           <ul>
-            <li><strong>Standard</strong> — no stroke limit applied</li>
-            <li><strong>Standard with ESC</strong> (Equitable Stroke Control) — adjusts unusually high hole scores before calculating the differential</li>
-            <li><strong>Standard with Stroke Average</strong> — uses a stroke average approach rather than differentials</li>
+            <li><strong>Standard (No Stroke Limit)</strong> — gross scores used without any hole-by-hole restrictions</li>
+            <li><strong>Standard with ESC</strong> — adjusts individual hole scores downward using Equitable Stroke Control before calculating the differential</li>
+            <li><strong>Standard with Stroke Average</strong> — maximum score per hole is par + stroke allocation for the hole + 2 strokes</li>
+            <li><strong>NGL 2020</strong> — similar to Standard but uses a different differential table and an updated Course Handicap formula that factors in Course Rating vs. Par</li>
+            <li><strong>NGL 2020 Modified</strong> — same as NGL 2020 but allows calculation after just 1 round (like the NGL Modified method)</li>
           </ul>
-          <p>Choose your method in <strong>Setup → League and Season Options → Handicap Method</strong>.</p>
+          <p>NGL uses <strong>handicaps 1–9</strong> (not 1–18) to accommodate the wide variety of courses leagues play on, including 9-hole and 36-hole facilities.</p>
+
+          <h3>Handicap Starting Point</h3>
+          <p>You can configure whether handicap calculations use:</p>
+          <ul>
+            <li><strong>All seasons for this league</strong> — scores and seeds carry over from year to year (default, recommended)</li>
+            <li><strong>Current season only</strong> — only scores within the current season's date range are used</li>
+          </ul>
+
+          <h3>Handicap Index Percentage</h3>
+          <p>The default multiplier for the final Handicap Index calculation is <strong>96%</strong> (0.96). This is the USGA standard. Leagues should only change this value with a specific justification — for most leagues the default is correct.</p>
         </div>
 
+        <!-- SCORE TYPES -->
+        <div id="score-types" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Reference</span>
+            <h2 style="border:none; margin-top:8px;">Score Types Used in Handicapping</h2>
+          </div>
+          <ul>
+            <li><strong>Gross Score</strong> — the total actual strokes taken, with an optional maximum score per hole applied</li>
+            <li><strong>Adjusted Gross Score</strong> — the gross score after applying ESC or Stroke Control adjustments to individual holes</li>
+            <li><strong>Net Score</strong> — Adjusted Gross Score minus the golfer's Course Handicap</li>
+          </ul>
+        </div>
+
+        <!-- ESC TABLE -->
+        <div id="esc-table" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Standard with ESC</span>
+            <h2 style="border:none; margin-top:8px;">Equitable Stroke Control (ESC) Table</h2>
+          </div>
+          <p>ESC adjusts individual hole scores <em>downward</em> before the handicap differential is calculated. Its purpose is to prevent one disastrous hole from wildly skewing a golfer's handicap. ESC applies to all scores used for handicap purposes, including tournaments. There is no limit on the number of holes that can be adjusted in a single round.</p>
+          <p>The adjusted scores are called <strong>adjusted gross scores</strong>.</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Course Handicap (18 Holes)</th>
+                <th>Maximum Score Per Hole</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>9 or less</td><td>Double Bogey</td></tr>
+              <tr><td>10 – 19</td><td>7</td></tr>
+              <tr><td>20 – 29</td><td>8</td></tr>
+              <tr><td>30 – 39</td><td>9</td></tr>
+              <tr><td>40 or more</td><td>10</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DIFFERENTIALS -->
+        <div id="differentials" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Step 1 of 3</span>
+            <h2 style="border:none; margin-top:8px;">Calculating Handicap Differentials</h2>
+          </div>
+          <p>The handicap differential is an intermediate value calculated for each round. It's the essential building block for determining a golfer's Handicap Index.</p>
+
+          <div class="formula-box">
+            <strong>Formula:</strong><br>
+            Handicap Differential = (Score − Course Rating) × 113 ÷ Slope Rating
+          </div>
+
+          <div class="example-box">
+            <strong>Example</strong> — Score: 78 &nbsp;|&nbsp; Course Rating: 72 &nbsp;|&nbsp; Slope Rating: 131<br><br>
+            (78 − 72) × 113 ÷ 131 = <strong>5.175</strong><br>
+            Handicap Differential = <strong>5.1</strong> &nbsp;(only tenths digit kept, not rounded)
+          </div>
+
+          <p>The differential is calculated per round using either the gross score or the adjusted gross score (depending on your handicap method). Course Rating and Slope Rating are found on the course scorecard. If not available, NGL defaults to <em>Course Rating = Par</em> and <em>Slope Rating = 113</em>. Only the tenths digit is retained — the hundredths digit is dropped, not rounded.</p>
+        </div>
+
+        <!-- DIFFERENTIAL TABLES -->
+        <div id="differential-tables" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Step 2 of 3</span>
+            <h2 style="border:none; margin-top:8px;">Differential Tables — How Many Rounds to Use</h2>
+          </div>
+          <p>Once differentials are calculated for each round, only the <strong>lowest differentials</strong> are used — not all of them. The number depends on how many rounds are in the system and which method your league uses. NGL looks at up to the <strong>20 most recent rounds and seeds</strong>.</p>
+          <p>The USGA Standard method requires a minimum of 5 rounds before a handicap is calculated. The NGL and Modified methods allow calculation after just 1 round, which is ideal for shorter league seasons.</p>
+
+          <div class="table-grid">
+            <div>
+              <h3>NGL Method</h3>
+              <table class="data-table">
+                <thead><tr><th># of Rounds</th><th>Differentials Used</th></tr></thead>
+                <tbody>
+                  <tr><td>1 – 2</td><td>1 lowest</td></tr>
+                  <tr><td>3 – 4</td><td>2 lowest</td></tr>
+                  <tr><td>5 – 6</td><td>3 lowest</td></tr>
+                  <tr><td>7 – 8</td><td>4 lowest</td></tr>
+                  <tr><td>9 – 10</td><td>5 lowest</td></tr>
+                  <tr><td>11 – 12</td><td>6 lowest</td></tr>
+                  <tr><td>13 – 14</td><td>7 lowest</td></tr>
+                  <tr><td>15 – 16</td><td>8 lowest</td></tr>
+                  <tr><td>17 – 18</td><td>9 lowest</td></tr>
+                  <tr><td>19 – 20</td><td>10 lowest</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h3>Standard Method</h3>
+              <table class="data-table">
+                <thead><tr><th># of Rounds</th><th>Differentials Used</th></tr></thead>
+                <tbody>
+                  <tr><td>5 – 6</td><td>1 lowest</td></tr>
+                  <tr><td>7 – 8</td><td>2 lowest</td></tr>
+                  <tr><td>9 – 10</td><td>3 lowest</td></tr>
+                  <tr><td>11 – 12</td><td>4 lowest</td></tr>
+                  <tr><td>13 – 14</td><td>5 lowest</td></tr>
+                  <tr><td>15 – 16</td><td>6 lowest</td></tr>
+                  <tr><td>17</td><td>7 lowest</td></tr>
+                  <tr><td>18</td><td>8 lowest</td></tr>
+                  <tr><td>19</td><td>9 lowest</td></tr>
+                  <tr><td>20</td><td>10 lowest</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h3>Standard Modified Method</h3>
+              <table class="data-table">
+                <thead><tr><th># of Rounds</th><th>Differentials Used</th></tr></thead>
+                <tbody>
+                  <tr><td>1 – 6</td><td>1 lowest</td></tr>
+                  <tr><td>7 – 8</td><td>2 lowest</td></tr>
+                  <tr><td>9 – 10</td><td>3 lowest</td></tr>
+                  <tr><td>11 – 12</td><td>4 lowest</td></tr>
+                  <tr><td>13 – 14</td><td>5 lowest</td></tr>
+                  <tr><td>15 – 16</td><td>6 lowest</td></tr>
+                  <tr><td>17</td><td>7 lowest</td></tr>
+                  <tr><td>18</td><td>8 lowest</td></tr>
+                  <tr><td>19</td><td>9 lowest</td></tr>
+                  <tr><td>20</td><td>10 lowest</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h3>NGL 2020 Method</h3>
+              <table class="data-table">
+                <thead><tr><th># of Rounds</th><th>Differentials Used</th></tr></thead>
+                <tbody>
+                  <tr><td>5 – 6</td><td>1 lowest</td></tr>
+                  <tr><td>7 – 8</td><td>2 lowest</td></tr>
+                  <tr><td>9 – 10</td><td>3 lowest</td></tr>
+                  <tr><td>11 – 12</td><td>4 lowest</td></tr>
+                  <tr><td>13 – 14</td><td>5 lowest</td></tr>
+                  <tr><td>15 – 16</td><td>6 lowest</td></tr>
+                  <tr><td>17</td><td>7 lowest</td></tr>
+                  <tr><td>18 – 20</td><td>8 lowest</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h3>NGL 2020 Modified Method</h3>
+              <table class="data-table">
+                <thead><tr><th># of Rounds</th><th>Differentials Used</th></tr></thead>
+                <tbody>
+                  <tr><td>1 – 6</td><td>1 lowest</td></tr>
+                  <tr><td>7 – 8</td><td>2 lowest</td></tr>
+                  <tr><td>9 – 10</td><td>3 lowest</td></tr>
+                  <tr><td>11 – 12</td><td>4 lowest</td></tr>
+                  <tr><td>13 – 14</td><td>5 lowest</td></tr>
+                  <tr><td>15 – 16</td><td>6 lowest</td></tr>
+                  <tr><td>17</td><td>7 lowest</td></tr>
+                  <tr><td>18 – 20</td><td>8 lowest</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- HANDICAP INDEX -->
         <div id="handicap-index" class="article-body" style="margin-bottom:20px;">
           <div class="article-header">
-            <span class="article-tag">Concepts</span>
-            <h2 style="border:none; margin-top:8px;">What is a Handicap Index?</h2>
+            <span class="article-tag">Step 3 of 3</span>
+            <h2 style="border:none; margin-top:8px;">Calculating the Handicap Index</h2>
           </div>
-          <p>A <strong>Handicap Index</strong> is a decimal number that represents a golfer's demonstrated ability relative to par — independent of the specific course they're playing. It's a portable measure of skill that works on any rated course.</p>
-          <p>Example: a golfer with a Handicap Index of <strong>12.4</strong> typically shoots about 12–13 strokes over par on a course of average difficulty.</p>
-          <h3>How it's calculated</h3>
-          <p>NGL uses the <strong>most recent 20 scores and seeds</strong> to calculate the Handicap Index. The system takes the best differentials from those rounds, averages them, and applies a multiplier to produce the final index.</p>
-          <div class="tip-box"><strong>Handicap Index vs. Course Handicap:</strong> The Handicap Index is your portable ability number. The Course Handicap is what you actually use on the scorecard — it's adjusted for the specific course's slope rating.</div>
+          <p>The Handicap Index is a number to one decimal place (e.g., 5.6) that is a generic representation of a golfer's game relative to par — not tied to any one course. A golfer with a 5.6 Handicap Index could be expected to shoot somewhere between 5 and 6 strokes over par on any given day.</p>
+
+          <div class="formula-box">
+            <strong>Formula:</strong><br>
+            Handicap Index = (Sum of Differentials Used ÷ Number of Differentials Used) × 0.96
+          </div>
+
+          <div class="example-box">
+            <strong>Example — Player B</strong> (4 differentials used: 8.3, 7.7, 9.0, 5.2)<br>
+            (8.3 + 7.7 + 9.0 + 5.2) ÷ 4 × 0.96 = 7.248<br>
+            <strong>Handicap Index = 7.2</strong>
+            <br><br>
+            <strong>Example — Player C</strong> (2 differentials used: 3.9, 0.8)<br>
+            (3.9 + 0.8) ÷ 2 × 0.96 = 2.256<br>
+            <strong>Handicap Index = 2.2</strong>
+          </div>
+
+          <div class="tip-box"><strong>Viewing the calculation:</strong> Click a golfer's name in the Golfers section → their profile page → <em>"Display Handicap Calculation"</em> to see exactly which rounds were used (circled) and the actual calculation formula.</div>
         </div>
 
+        <!-- COURSE HANDICAP -->
         <div id="course-handicap" class="article-body" style="margin-bottom:20px;">
           <div class="article-header">
-            <span class="article-tag">Concepts</span>
-            <h2 style="border:none; margin-top:8px;">What is a Course Handicap?</h2>
+            <span class="article-tag">Course Handicap</span>
+            <h2 style="border:none; margin-top:8px;">Calculating Course Handicap (Standard Methods)</h2>
           </div>
-          <p>A <strong>Course Handicap</strong> is a whole number that tells you how many strokes you need to match a scratch golfer's performance on a <em>specific course</em> from a <em>specific set of tees</em>.</p>
-          <h3>The Formula</h3>
-          <p style="background:var(--green-pale); padding:12px 16px; border-radius:8px; font-family:monospace; font-size:.9rem;">
-            Course Handicap = Handicap Index × (Slope Rating ÷ 113)
-          </p>
-          <p>Where <strong>113</strong> is the standard slope rating for a course of average difficulty. A course with a higher slope is harder than average; a lower slope is easier.</p>
-          <p>Example: Handicap Index of 12.4 on a course with Slope Rating 125 = <strong>14</strong> Course Handicap.</p>
+          <p>The Course Handicap is a whole number representing the strokes subtracted from a golfer's adjusted gross score to produce their net score. It accounts for the difficulty of the specific course being played.</p>
+          <p>This formula applies to: <strong>NGL, Standard, and Standard Modified</strong> methods.</p>
+
+          <div class="formula-box">
+            <strong>Formula:</strong><br>
+            Course Handicap = Handicap Index × (Course Slope ÷ 113)<br>
+            <em>(rounded to nearest whole number — .4 rounds down, .5 rounds up)</em>
+          </div>
+
+          <div class="example-box">
+            <strong>Example</strong> — Course Slope Rating: 128
+            <br><br>
+            Player B (Handicap Index 7.2): &nbsp; 7.2 × 128 ÷ 113 = 8.155 → <strong>Course Handicap = 8 strokes</strong><br>
+            Player C (Handicap Index 2.2): &nbsp; 2.2 × 128 ÷ 113 = 2.492 → <strong>Course Handicap = 2 strokes</strong>
+          </div>
+
+          <p>You can also use the NGL Handicap Calculator online: <a href="http://www.netgolfleague.com/HandicapCalculator.aspx" target="_blank">netgolfleague.com/HandicapCalculator.aspx</a></p>
         </div>
 
+        <!-- NGL 2020 -->
+        <div id="ngl-2020" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">NGL 2020 Method</span>
+            <h2 style="border:none; margin-top:8px;">NGL 2020 Course Handicap Formula</h2>
+          </div>
+          <p>The NGL 2020 and NGL 2020 Modified methods use an updated formula that also accounts for the difference between the Course Rating and Par. This provides a more precise adjustment for courses that play significantly harder or easier than par.</p>
+          <p>This formula applies to: <strong>NGL 2020 and NGL 2020 Modified</strong> methods only.</p>
+
+          <div class="formula-box">
+            <strong>Formula:</strong><br>
+            Course Handicap = (Handicap Index × (Course Slope ÷ 113)) + (Course Rating − Par)
+          </div>
+
+          <div class="example-box">
+            <strong>Example</strong> — Course Slope: 128 &nbsp;|&nbsp; Course Rating: 74 &nbsp;|&nbsp; Par: 72
+            <br><br>
+            Player B (Handicap Index 7.2):<br>
+            &nbsp;&nbsp;7.2 × 128 ÷ 113 + (74 − 72) = 10.155 → <strong>Course Handicap = 10 strokes</strong>
+            <br><br>
+            Player C (Handicap Index 2.2):<br>
+            &nbsp;&nbsp;2.2 × 128 ÷ 113 + (74 − 72) = 4.492 → <strong>Course Handicap = 4 strokes</strong>
+          </div>
+        </div>
+
+        <!-- HANDICAP DISTRIBUTION -->
+        <div id="handicap-distribution" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Stroke Distribution</span>
+            <h2 style="border:none; margin-top:8px;">Distributing Handicap Strokes Over a Round</h2>
+          </div>
+          <p>Golf courses assign a <strong>Stroke Index</strong> (1–18) to each hole, indicating relative difficulty — Stroke Index 1 is the hardest hole, 18 is the easiest. Handicap strokes are applied to the hardest holes first.</p>
+
+          <div class="example-box">
+            <strong>Example 1</strong> — 15 Course Handicap:<br>
+            1 stroke subtracted on holes with Stroke Index 1 through 15.
+          </div>
+          <div class="example-box">
+            <strong>Example 2</strong> — 18 Course Handicap:<br>
+            1 stroke subtracted on every hole (Stroke Index 1 through 18).
+          </div>
+          <div class="example-box">
+            <strong>Example 3</strong> — 25 Course Handicap:<br>
+            First, 1 stroke on all 18 holes. Then an additional stroke on holes with Stroke Index 1 through 7.<br>
+            Total: (7 holes × 2 strokes) + (11 holes × 1 stroke) = <strong>25 strokes</strong>
+          </div>
+        </div>
+
+        <!-- SEED HANDICAPS -->
         <div id="seed-handicaps" class="article-body" style="margin-bottom:20px;">
           <div class="article-header">
             <span class="article-tag">Setup</span>
             <h2 style="border:none; margin-top:8px;">Setting Initial (Seed) Handicaps</h2>
           </div>
-          <p>At the start of a new season, golfers don't yet have scores in the system. Seed handicaps give NGL a starting point for calculations.</p>
+          <p>At the start of a new season golfers may not yet have enough scores in the system. Seed scores give NGL a starting point and prevent everyone from defaulting to a 0 (scratch) handicap.</p>
+
+          <h3>Three options for initial handicaps:</h3>
+          <ul>
+            <li><strong>No Initial Handicap</strong> — golfers start at zero course handicap for the first round; the system calculates from there</li>
+            <li><strong>Enter an existing Handicap Index</strong> — or use the <a href="http://www.netgolfleague.com/HandicapCalculator.aspx" target="_blank">NGL Handicap Calculator</a> to determine one</li>
+            <li><strong>Seed Scores</strong> — click the golfer's name on the homepage → profile → <em>"Add Seed Scores for calculating handicap"</em> → add previous round scores with slope and rating</li>
+          </ul>
+
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
               <div class="step-body">
-                <h4>Open Each Golfer's Profile</h4>
-                <p>Navigate to Golfer Management and select a golfer to edit their profile.</p>
+                <h4>Click the Golfer's Name</h4>
+                <p>From the league homepage, click on the golfer's name to open their profile.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-body">
                 <h4>Add Seed Scores</h4>
-                <p>Enter historical scores along with the course slope and rating for each score. NGL incorporates these into the handicap calculation.</p>
+                <p>Click <em>"Add Seed Scores for calculating handicap."</em> Holes per round auto-sets to 9 or 18 based on your season configuration.</p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div class="step-body">
-                <h4>Save and Repeat</h4>
-                <p>Repeat for all golfers. Seed scores appear alongside real scores in the 20-round calculation window.</p>
+                <h4>Enter Course Slope &amp; Rating</h4>
+                <p>Enter the Course Slope Rating (~113 for average courses) and the Course Rating (~36 for nine-hole leagues if not listed per nine on the scorecard).</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Save &amp; Recalculate</h4>
+                <p>After entering seed scores, if the Handicap Index doesn't appear next to the golfer's name, go to Setup and click <em>"Recalculate Handicaps and Scoring."</em></p>
               </div>
             </div>
           </div>
+
           <div class="tip-box">
-            <strong>Quick tip for Week 1:</strong> If you don't have historical scores, a simple starting handicap is each golfer's <em>first week score minus par</em>. Enter this as their seed so no one defaults to scratch (0 handicap).
+            <strong>Pro tip:</strong> Many leagues enter 5 or more seed scores per golfer to reduce the large handicap fluctuations that occur in the early weeks when using the USGA method. Seed scores remain in the calculation until enough real rounds push them off the end of the 20-round window. If using current-season-only handicap calculation, make sure seed score dates fall within your season's date range.
           </div>
         </div>
 
-        <div id="handicap-methods" class="article-body" style="margin-bottom:20px;">
-          <div class="article-header">
-            <span class="article-tag">Methods</span>
-            <h2 style="border:none; margin-top:8px;">Handicap Calculation Methods</h2>
-          </div>
-
-          <h3>Standard (No Stroke Limit)</h3>
-          <p>Scores are used as-is to calculate the differential. No maximum is applied to any individual hole score. Best for informal leagues.</p>
-
-          <h3>Standard with ESC (Equitable Stroke Control)</h3>
-          <p>ESC caps the maximum score a golfer can record on any single hole before the differential is calculated. This prevents one bad hole from wildly skewing a handicap.</p>
-          <ul>
-            <li>Course Handicap 0–9 → max score per hole: <strong>double bogey</strong></li>
-            <li>Course Handicap 10–19 → max score per hole: <strong>7</strong></li>
-            <li>Course Handicap 20–29 → max score per hole: <strong>8</strong></li>
-            <li>Course Handicap 30–39 → max score per hole: <strong>9</strong></li>
-            <li>Course Handicap 40+ → max score per hole: <strong>10</strong></li>
-          </ul>
-
-          <h3>Standard with Stroke Average</h3>
-          <p>Uses the average of the golfer's actual strokes per round rather than score differentials. Good for leagues that want a simpler, more intuitive handicap number.</p>
-        </div>
-
+        <!-- MAX HANDICAP -->
         <div id="max-handicap" class="article-body" style="margin-bottom:20px;">
           <div class="article-header">
             <span class="article-tag">Reference</span>
-            <h2 style="border:none; margin-top:8px;">Maximum Nine-Hole Handicap</h2>
+            <h2 style="border:none; margin-top:8px;">Maximum Handicap</h2>
           </div>
-          <p>The USGA sets maximum Handicap Index limits:</p>
-          <ul>
-            <li><strong>Men:</strong> 18.2</li>
-            <li><strong>Women:</strong> 20.2</li>
-          </ul>
-          <p>Note that the resulting <strong>Course Handicap</strong> may be higher than these values on courses with slope ratings above 113, since the slope multiplier increases the number.</p>
+          <p>The maximum USGA Handicap Index is <strong>18.2 for men</strong> and <strong>20.2 for women</strong>.</p>
+          <p>Note: A maximum USGA Handicap Index will convert to a Course Handicap that <em>exceeds</em> these numbers on courses with Slope Ratings greater than 113, because the slope multiplier increases the result.</p>
+          <p>Because leagues vary in what they want, NGL allows administrators to override the default Course Handicap when entering scores on the scorecard. For example, a league playing a course with a slope of 134 might choose to cap all Course Handicaps at 22 (18.2 × 134 ÷ 113 = 21.6, rounded up).</p>
         </div>
 
+        <!-- COURSE RATING -->
         <div id="course-rating" class="article-body">
           <div class="article-header">
             <span class="article-tag">Reference</span>
             <h2 style="border:none; margin-top:8px;">How Course Ratings Are Established</h2>
           </div>
-          <p>Course ratings are conducted by the NCGA (or your regional golf association) every six years using trained volunteer raters. Raters evaluate <strong>10 obstacles per hole</strong> to arrive at the official Course Rating and Slope Rating.</p>
-          <p>You can look up official course ratings at the USGA course rating database: <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">ncrdb.usga.org</a></p>
-          <div class="tip-box"><strong>Course not in NGL's database?</strong> When setting up your schedule, use the option to submit a new course. You'll need the official course rating and slope from the scorecard or the USGA database.</div>
+          <p>The NCGA typically re-rates courses every six years, and sooner if the course has undergone significant renovations. Anywhere from 12 to 16 of the NCGA's more than 90 volunteer course raters participate in each rating.</p>
+          <p>The rating team evaluates the overall difficulty of the golf course by taking into account <strong>10 obstacles and effective length corrections on every hole</strong>:</p>
+          <p style="color:var(--text-muted); font-style:italic; margin-left:16px;">Topography · Fairway · Green Target · Recovery &amp; Rough · Bunkers · Out of Bounds · Water · Trees · Green Surface · Psychology</p>
+          <p>Members of the team usually play the course before or after the rating to gain additional insight into its level of difficulty. Usually course and slope ratings are found on course scorecards. If not, the USGA maintains a searchable online database:</p>
+          <p><a href="https://ncrdb.usga.org/NCRDB/" target="_blank">https://ncrdb.usga.org/NCRDB/</a></p>
+          <div class="tip-box"><strong>Course not in NGL's database?</strong> When setting up your schedule, use the option to submit new course information. Typical processing time is 48 hours. You'll need the Course Rating and Slope Rating from the scorecard or the USGA database.</div>
         </div>
 
       </div>

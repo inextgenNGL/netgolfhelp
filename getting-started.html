@@ -49,6 +49,8 @@
           <li><a href="#golfer-management">Golfer Management</a></li>
           <li><a href="#team-management">Team Management</a></li>
           <li><a href="#schedule-scoring">Schedule &amp; Scoring</a></li>
+          <li><a href="#team-scoring-setup">Team Scoring Setup</a></li>
+          <li><a href="#individual-scoring-setup">Individual Scoring</a></li>
           <li><a href="#second-year">Setting Up Year 2+</a></li>
         </ul>
       </aside>
@@ -225,21 +227,118 @@
             <span class="article-tag">Schedule</span>
             <h2 style="border:none; margin-top:8px;">Schedule &amp; Scoring Setup</h2>
           </div>
-          <p>The scheduling system lets you generate a full season calendar automatically or add events one by one.</p>
+          <p>The scheduling system lets you generate a full season calendar automatically or add events one by one. Access it via <strong>Schedule &amp; Scoring in the Main Menu</strong>, the <strong>Schedule link on the Homepage</strong>, or <strong>Setup → Schedule &amp; Scoring Management</strong>.</p>
 
-          <h3>Generating Your Schedule</h3>
-          <p>Use the <strong>Generate</strong> option to automatically create a round-robin schedule based on your teams and preferred play days. Or use <strong>Add Event</strong> to create individual rounds manually.</p>
+          <h3>Generating Events</h3>
+          <p>Click <strong>Schedule and Scoring → Generate Events</strong>. Set parameters including first group tee time, start/end dates, frequency (weekly or bi-weekly), and day(s) of play. Events auto-generate with default names "Week 1," "Week 2," etc. — which can be edited. Running Generate Events multiple times will not delete previously configured events.</p>
+
+          <h3>Adding a Single Event</h3>
+          <p>Use <strong>Schedule &amp; Scoring → Add Event</strong>. The event form includes fields for date, time, event type, status, and a description area for notes.</p>
 
           <h3>Setting the Course</h3>
-          <p>Search the NGL course database for your club. If your course isn't listed, you can submit it for addition. Course data includes slope rating and course rating — both needed for accurate handicap calculations.</p>
+          <p>Two methods: search the NGL database by course name, city, and/or state; or submit new course information (typical processing time: 48 hours). Course Rating and Slope Rating are needed for accurate handicap calculations.</p>
 
-          <h3>Creating Pairings</h3>
-          <p>For each event, create pairings to designate which golfers are playing that week. Pairings also enable team substitutions across multiple players.</p>
+          <h3>Setting Up Matches</h3>
+          <p>From Schedule &amp; Scoring: <strong>Generate All Matches</strong> creates team pairings across all events (skipping events already configured). Use <strong>Edit Matches</strong> or <strong>Generate Matches</strong> to modify individual event pairings.</p>
+
+          <h3>Setting Up Pairings</h3>
+          <p>Select <strong>Generate Pairings</strong> from the event dropdown for automatic golfer pairings within team matchups. Use <strong>Edit Pairings</strong> to customize individual pairings. Pairings must be created before player names appear on the scorecard entry screen.</p>
 
           <div class="tip-box"><strong>Playing both nines?</strong> Create two same-day events per week (e.g. "Week 1 Front 9" and "Week 1 Back 9") with separate team and pairing schedules. This lets you track front and back nine scores independently.</div>
 
           <h3>Posting Scores</h3>
-          <p>After your round, use <strong>Post Scorecard</strong> to enter each golfer's scores hole-by-hole. Handicaps are automatically applied based on your league's handicap settings. Past scores can also be backdated using the <strong>Post League Info</strong> feature if your league joins mid-season.</p>
+          <p>Click the <strong>Scorecard</strong> option in the event dropdown. Enter the gross score for each hole. If tracking putts, append a slash and the putt count (e.g. <code>5/2</code> = 5 strokes, 2 putts). The system enforces your configured maximum score per hole. Past scores can be backdated using the <strong>Post League Info</strong> feature if your league joins mid-season.</p>
+        </div>
+
+        <!-- TEAM SCORING SETUP -->
+        <div id="team-scoring-setup" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Scoring Setup</span>
+            <h2 style="border:none; margin-top:8px;">Team Scoring Setup</h2>
+          </div>
+          <p>Access via <strong>Setup → Team Scoring System Wizard</strong>. Choose between Match Play, Best Ball, or disabled. Each has its own configuration screen.</p>
+
+          <h3>Match Play</h3>
+          <p>Players compete hole-by-hole. The lowest gross or net score (configurable) wins the hole and earns points per your setup. Key settings:</p>
+          <ul>
+            <li><strong>Pairings per Match</strong> — number of pairings per match (e.g. 4 pairings)</li>
+            <li><strong>Standings Display</strong> — Total Match Points or Wins &amp; Losses</li>
+            <li><strong>Hole Points</strong> — points awarded for winning or halving individual holes</li>
+            <li><strong>Match Points</strong> — points awarded for winning or tying overall matches</li>
+            <li><strong>Net Score Option</strong> — use net or gross score to determine hole winners</li>
+            <li><strong>Match Outcome Determination</strong> — Option 1: compare total holes won; Option 2: compare total net/gross strokes</li>
+            <li><strong>Forfeit Points</strong> — points awarded when a golfer has no opponent (plays against course par) and for attendance</li>
+            <li><strong>Match Best Ball Points</strong> — additional team points based on combined net scores of a specified number of players</li>
+          </ul>
+
+          <h4>Match Play Examples (Net Score)</h4>
+          <table class="data-table">
+            <thead><tr><th>Player</th><th>Hole Points</th><th>Match Points (Option A: Holes Won)</th><th>Match Points (Option B: Net Score)</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Player A</td><td>Won 3, Halved 3 → 3 + 1.5 = 4.5</td><td>Tied 3–3 → 1 pt</td><td>Lost 34–33 → 0 pts</td><td>5.5 / 4.5</td></tr>
+              <tr><td>Player E</td><td>Won 3, Halved 4 → 3 + 2 = 5</td><td>Tied 3–3 → 1 pt</td><td>Won 33–34 → 2 pts</td><td>6.0 / 7.0</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Match Play Examples (Gross Score)</h4>
+          <table class="data-table">
+            <thead><tr><th>Player</th><th>Hole Points</th><th>Match Points (Option A: Holes Won)</th><th>Match Points (Option B: Gross Score)</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Player A</td><td>Won 3, Halved 4 → 3 + 2 = 5</td><td>Won 3–2 → 2 pts</td><td>Won 36–37 → 2 pts</td><td>7.0</td></tr>
+              <tr><td>Player E</td><td>Won 2, Halved 4 → 2 + 2 = 4</td><td>Lost 2–3 → 0 pts</td><td>Lost 37–36 → 0 pts</td><td>4.0</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Handicap Distribution in Match Play</h3>
+          <ul>
+            <li><strong>Option 1</strong> — Full handicap distribution without difference calculation</li>
+            <li><strong>Option 2</strong> — Subtract lower handicap from higher before allocating strokes</li>
+          </ul>
+
+          <h3>Best Ball</h3>
+          <p>The best net or gross score of a specified number of golfers per team counts for each hole. Key settings:</p>
+          <ul>
+            <li><strong>Golfers per Team</strong> — how many players per team in each match</li>
+            <li><strong>Scores to Determine Best Ball per Hole</strong> — e.g. best 2 of 4 scores count</li>
+            <li><strong>Score Type</strong> — Net or Gross</li>
+            <li><strong>Standings Display</strong> — Total Match Points or Wins &amp; Losses</li>
+            <li><strong>Hole Points &amp; Match Points</strong> — same as Match Play</li>
+            <li><strong>Match Outcome Determination</strong> — Option 1: lowest combined net scores; Option 2: holes won</li>
+          </ul>
+
+          <h4>Best Ball Examples</h4>
+          <table class="data-table">
+            <thead><tr><th>Team</th><th>Hole Points</th><th>Match Points (Option A: Holes Won)</th><th>Match Points (Option B: Total Score)</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Team 1</td><td>Won 5, Halved 1 → 5 + 0.5 = 5.5</td><td>Won 5–3 → 2 pts</td><td>Won 79–80 → 2 pts</td><td>7.5</td></tr>
+              <tr><td>Team 2</td><td>Won 3, Halved 1 → 3 + 0.5 = 3.5</td><td>Lost 3–5 → 0 pts</td><td>Lost 80–79 → 0 pts</td><td>3.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- INDIVIDUAL SCORING SETUP -->
+        <div id="individual-scoring-setup" class="article-body" style="margin-bottom:20px;">
+          <div class="article-header">
+            <span class="article-tag">Scoring Setup</span>
+            <h2 style="border:none; margin-top:8px;">Individual Scoring Setup</h2>
+          </div>
+          <p>Access via <strong>Setup → Individual Scoring System Wizard</strong>. Two choices:</p>
+
+          <h3>Stroke Play / Medal Play</h3>
+          <p>Two types:</p>
+          <ul>
+            <li><strong>Total Gross Score</strong> — total actual strokes; lowest score wins</li>
+            <li><strong>Total Net Score</strong> — total strokes minus course handicap; lowest net score wins</li>
+          </ul>
+
+          <h3>Stableford Scoring</h3>
+          <p>Points are awarded per hole based on the golfer's score versus par (adjusted for handicap). Settings include:</p>
+          <ul>
+            <li><strong>Points Determination</strong> — net or gross scores relative to par</li>
+            <li><strong>Rounds Used</strong> — how many rounds to include in total points calculation</li>
+            <li><strong>Custom Point Values</strong> — configure points for each score relative to par</li>
+          </ul>
+          <p>The standard Stableford system awards positive points only. <em>"The International"</em> modification also penalizes scores with negative points for holes scored poorly.</p>
         </div>
 
         <!-- SECOND YEAR -->

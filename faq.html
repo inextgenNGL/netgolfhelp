@@ -67,7 +67,7 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              NGL uses a 1–9 scale to accommodate the wide variety of courses leagues play on. Some courses have 36 holes, some have just 9, so a standardized 1–9 handicap works consistently across all configurations.
+              Because NGL deals with so many different courses, the system has to boil a scorecard down into its least common denominator. Since some courses have 36 holes and some have just 9, the only way to accommodate all courses and scorecards is to rank them 1–9. NGL does have an indicator for nines to identify which nine-hole course is more difficult, and uses that when applying the course rating.
             </div>
           </div>
 
@@ -77,7 +77,8 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              First-week scorecard entries must include a handicap value; otherwise golfers default to a 0 handicap (scratch). A simple approach: take each golfer's Week 1 score minus par and use that as their seed handicap. This prevents everyone from starting at scratch.
+              If you do not seed handicaps, then the first time you enter scores for a golfer you must enter a handicap on the scorecard in the HDCP column. If not, that golfer's handicap will be 0, and any handicap method with stroke control will adjust that golfer's score to par — making them a 0 handicap golfer for the year.<br><br>
+              An easy rule of thumb: take the Week 1 score minus par. For example, if a person shoots 55 for the first week: 55 − 36 (par) = 19. Enter 19 for that golfer's first week handicap.
             </div>
           </div>
 
@@ -87,7 +88,9 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Two options exist: use all season scores across all years (the default), or restrict calculations to the current season only. Configure this in Setup → League and Season Options → Handicap Calculation.
+              The Handicap Option "Handicap Starting Point" has two values:<br><br>
+              <strong>"Use scores for all seasons for this league"</strong> — uses all scores and handicap seeds for all seasons in the golf league. This is the best method because it allows handicaps to flow from one season to the next. This is the default.<br><br>
+              <strong>"Use only current season's scores"</strong> — uses only scores and handicap seeds that fall within the currently selected season dates. Any handicap seeds will need to fall within the season's dates.
             </div>
           </div>
 
@@ -97,7 +100,31 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              The NCGA (and similar regional associations) rate courses every six years using trained volunteer raters who evaluate 10 obstacles per hole. Official ratings are available in the <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">USGA course database</a>.
+              The NCGA typically re-rates courses every six years, and sooner if the course has undergone significant renovations. Anywhere from 12 to 16 of the NCGA's more than 90 volunteer course raters will participate in a rating. The team evaluates overall difficulty by taking into account 10 obstacles on every hole: topography, fairway, green target, recovery &amp; rough, bunkers, out of bounds, water, trees, green surface, and psychology.<br><br>
+              Course and slope ratings are usually found on course scorecards. If not, the USGA maintains a searchable database at <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">ncrdb.usga.org</a>.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              What is a Handicap Index?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              A Handicap Index is a number to one decimal place (e.g., 5.6) that is a generic — not tied to any one course — representation of a golfer's game relative to par. A golfer with a 5.6 Handicap Index could be expected to shoot somewhere between 5 and 6 strokes over par on any given day.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              What is a Course Handicap?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Course Handicap represents the number of strokes needed to play to the level of a scratch golfer — or the Course Rating of a particular set of tees. It is expressed as a whole number (e.g. 11).<br><br>
+              <strong>Formula:</strong> Handicap Index × Slope Rating ÷ 113 = Answer (rounded to nearest whole number)<br><br>
+              <strong>Example:</strong> 8.6 Handicap Index × 134 Slope Rating ÷ 113 = 10.2 = <strong>10 Course Handicap</strong><br><br>
+              You can also use the <a href="http://www.netgolfleague.com/HandicapCalculator.aspx" target="_blank">NGL Handicap Calculator</a>.
             </div>
           </div>
 
@@ -107,7 +134,20 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              USGA maximums are 18.2 for men and 20.2 for women. However, the resulting Course Handicap can be higher on courses with slope ratings exceeding 113, since the slope multiplier increases the number.
+              The maximum USGA Handicap Index is 18.2 for men and 20.2 for women. Note: a maximum USGA Handicap Index will convert to a Course Handicap that exceeds these numbers on courses with Slope Ratings greater than 113.<br><br>
+              Because of the variances in what NGL leagues want, administrators can override the default Course Handicap when entering it on the scorecard. For example, a league playing on a course with a slope of 134 may choose to cap all course handicaps over 22 (18.2 × 134 ÷ 113 = 21.6).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I establish initial handicaps for golfers?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              Click the golfer's name on the league homepage to open their profile. Click <em>"Add Seed Scores for calculating handicap."</em> Holes per round will automatically be set to 9 or 18 based on your season setup. Enter the Course Slope Rating (~113) and Course Rating (~36 for nine-hole leagues).<br><br>
+              These seed scores will continue to be included in the golfer's handicap index calculation until enough real rounds bump them off the end of the 20-round window. You can verify the calculation by clicking <em>"Display Handicap Calculation"</em> from the golfer's profile page.<br><br>
+              <strong>Tip:</strong> Many leagues enter 5 or more seed scores per golfer to reduce the large handicap fluctuations that occur during the first several weeks when using the USGA method. After entering seed scores, if the Handicap Index doesn't appear, go to Setup and click <em>"Recalculate Handicaps and Scoring."</em>
             </div>
           </div>
 
@@ -117,7 +157,8 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              This almost always means handicaps weren't entered before Week 1 scores were posted, so golfers defaulted to scratch (0). Always enter seed handicaps before posting the first round. The recommended seed: each golfer's score minus par.
+              One common cause is leaving the handicap blank for a golfer's first week — the system assumes they are a scratch golfer. If Equitable Stroke Control is being used, it will also limit the number of strokes a person has for an adjusted score.<br><br>
+              You need to enter a handicap for each golfer on their first event. A good starting point: score minus par (e.g. 56 − 36 = 20). You can add a handicap after the fact by going back to the scorecard for that event and entering the handicap. Make sure to click <em>"Save and Recalculate"</em> when finished. You can review the detailed calculation by clicking a golfer's name and then the <em>"Display Handicap Calculation"</em> link.
             </div>
           </div>
         </div>
@@ -177,7 +218,8 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              In Golfer Management, select the golfer names you want to contact, choose <strong>Invite</strong> from the Email dropdown, then click the <strong>Email</strong> button. This sends a batch email to each selected golfer with their personal login credentials.
+              Click on the <strong>Golfers</strong> link on your league homepage to pull up the Golfer List screen. Check the checkbox next to the golfer names you want to contact. Choose <strong>Invite</strong> from the Email dropdown, then click the <strong>Email</strong> button.<br><br>
+              <strong>Tip:</strong> The checkbox in the header row (brown section above the individual checkboxes) is an easy way to select all golfers at once — check it and all boxes will be checked for you.
             </div>
           </div>
 
@@ -187,7 +229,11 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Use <strong>Quick Add Golfer</strong> and enter their email address. If that address already exists in the NGL system, their account is automatically linked to your league — no duplicate profile is created and their login stays the same.
+              Golfers in netGolfLeague only need to be a member once. To add a golfer who is in a current or past league:<br><br>
+              1. Go to the Setup screen<br>
+              2. Click <strong>Quick Add Golfer</strong><br>
+              3. Enter the person's name and email address<br><br>
+              If the email address already matches an NGL member, they will be automatically linked into your golf league. That golfer will then be able to see either league when they log in.
             </div>
           </div>
 
@@ -197,7 +243,7 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Click <strong>Edit</strong> on the Golfers section, then click the <strong>Add</strong> button. Fill in the required fields (marked with asterisks). Email is not mandatory — you can create a golfer record without one.
+              Click the <strong>Edit</strong> button on the Golfers section of the home page, then click the <strong>Add</strong> button. Fill in the required fields — fields marked with an asterisk (*) are required.
             </div>
           </div>
         </div>
@@ -212,7 +258,14 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Create a new season with a start date earlier than today (so it becomes active), then use the <strong>Copy</strong> function on the Golfer Management screen to bring all previous golfers into the new season automatically.
+              Click <strong>Add/Change Season</strong> at the top of your homepage, then <strong>Add New Season</strong> at the bottom to create a new season. Make sure to set the start date earlier than today — this causes the system to automatically place golfers into the correct season the next time they log in.<br><br>
+              From the Golfer List screen, copy your golfers from the previous season:<br>
+              1. Go to the Golfer Management screen (click the Golfers link)<br>
+              2. Check the <strong>All League Members</strong> checkbox<br>
+              3. Select the members you want to copy<br>
+              4. In the <strong>Copy members to…</strong> dropdown, select your new season<br>
+              5. Click <strong>Copy</strong><br><br>
+              You can also easily send all golfers an invite email with their user ID and password by selecting them, choosing <strong>Invite</strong> from the dropdown, and clicking <strong>Email</strong>. If you choose to include all seasons in your handicap calculation, golfers will start the new year with the handicap established from last year.
             </div>
           </div>
 
@@ -252,7 +305,24 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Follow these six steps: (1) Verify your league setup is complete, (2) Add golfers and teams, (3) Configure your scoring system, (4) Schedule your rounds, (5) Play golf, (6) Enter scores after each round. See the <a href="getting-started.html">Getting Started</a> guide for detailed instructions on each step.
+              <strong>Step 1 — Verify Setup:</strong> Click the Setup menu option. Review your League Configuration (click "Change League Profile") and Season Configuration (click "Change Season Configuration"). Check that team &amp; individual scoring systems are correct, putt tracking is on/off as desired, Holes per Round is correct, and the handicap method and starting point are set.<br><br>
+              <strong>Step 2 — Add Golfers/Teams:</strong> Click "Add Golfer(s)" — your golfer will receive their NGL UserID and password by email. Then click "Add Team(s)."<br><br>
+              <strong>Step 3 — Tweak Scoring Settings:</strong> Click "Team Scoring" or "Individual Scoring" buttons to fine-tune settings.<br><br>
+              <strong>Step 4 — Schedule Rounds:</strong> Click Schedule &amp; Scoring → Add events. Set up Matches (team vs. team) and Pairings (golfer vs. golfer).<br><br>
+              <strong>Step 5 — Play Golf!</strong> Collect scorecards. Track putts if you want extra statistics.<br><br>
+              <strong>Step 6 — Enter Scores:</strong> Click the Scorecard button for each event. If tracking putts, enter scores as score/putt (e.g. 5/2).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+              How do I set up member access to my league?
+              <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              There are two ways:<br><br>
+              <strong>Option 1 — Shared Player Login:</strong> When setting up your league you create a Player Login ID and Password. Distribute this one set of credentials to all league members. They use it to enter NGL, create an individual member account, and join your league.<br><br>
+              <strong>Option 2 — Individual Invites:</strong> Add players individually from the Edit Players screen on your league homepage. Then send an invite email to each member — they'll receive their own individual Member Login ID and Password, use it to log in, finish their Member Profile, and reach the league homepage.
             </div>
           </div>
         </div>
@@ -267,7 +337,7 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              NGL uses cookies to maintain your session. Make sure your browser is set to accept cookies from netgolfleague.com. If the problem persists after enabling cookies, contact <a href="mailto:support@netgolfleague.com">support@netgolfleague.com</a>.
+              Make sure your browser is set to accept cookies. A cookie is a small piece of information stored by your browser which NGL uses to identify you and keep you logged in as you move from page to page. For information on how to ensure your browser accepts cookies, refer to your browser's help settings or our Privacy Policy. If the problem persists, contact <a href="mailto:support@netgolfleague.com">support@netgolfleague.com</a>.
             </div>
           </div>
 
@@ -277,7 +347,12 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Convert your file to .txt or .html format before uploading using your application's "Save As" function. Alternatively, host the file on Google Drive or Dropbox and share the link as a text item in the League Information Center.
+              If you have a file in another format (e.g. MS Word .doc or MS Excel .xls) that you'd like to upload, you must first save it as either a text or HTML file. In most cases:<br><br>
+              1. Open the file with the application you used to create it<br>
+              2. Click <strong>File</strong> in the main menu<br>
+              3. Click <strong>Save As</strong><br>
+              4. Change the "Save As" type to .txt or .html<br><br>
+              If you're still having problems, contact <a href="mailto:support@netgolfleague.com">support@netgolfleague.com</a>.
             </div>
           </div>
 
@@ -287,7 +362,8 @@
               <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              Create separate seasons with distinct date ranges for each split. Set the handicap calculation to "Use scores for all seasons for this league" (the default) so handicaps carry across splits. Each season's standings reset independently at the start of that season.
+              You can create 2 seasons — one for each half. Set the correct season duration (start and end dates) for each session. Each season has its own scoring so points reset between halves.<br><br>
+              In Handicap Options, set <strong>"Scores to consider for Handicap Calculations"</strong> to <em>"Use scores for all seasons for this league"</em> (the default). This keeps handicaps continuous across the split. You can create as many seasons as you need — it won't affect your subscription.
             </div>
           </div>
         </div>
