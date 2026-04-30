@@ -48,9 +48,8 @@
   <p>Search our guides or browse categories below to manage your golf league with ease.</p>
   <div class="hero-search">
     <input id="heroSearch" type="search" placeholder="e.g. How do I add a golfer?" autocomplete="off" />
-    <button onclick="doSearch()">Search</button>
-    <div id="heroResults" class="search-results-box"></div>
   </div>
+  <div id="heroResults" class="search-results-box"></div>
 </section>
 
 <!-- CATEGORIES -->
@@ -257,12 +256,9 @@
     }
   });
 
-  function doSearch() {
-    const q = heroSearch.value.trim();
-    if (q) renderResults(searchArticles(q), heroResults);
-  }
-
-  heroSearch.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+  heroSearch.addEventListener('keydown', e => { 
+    if (e.key === 'Enter') renderResults(searchArticles(heroSearch.value.trim()), heroResults);
+  });
 
   document.addEventListener('click', e => {
     if (!e.target.closest('.hero-search')) heroResults.classList.remove('active');
